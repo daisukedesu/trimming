@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+        :root{
+            --key-color: #222;
+            --key-font-color:#fff;
+            --width-size: 40%;
+        }
+		html{
+			width: 100%;
+			height: 100%;
+			font-size: 100%;
+		}
+		body{
+			min-height: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+		header{
+		background-color: var(--key-color);
+            color:  var(--key-font-color);
+		}
+        nav{
+            width: var(--width-size);
+            margin: 0 auto;
+        }
+        #contents{
+            flex: 1;
+            width: var(--width-size);
+            margin: 2rem auto 0 auto;
+        }
+        article{
+            width: 100%;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        article > img{
+            width: 100%;
+        }
+        .box{
+            width: 0;
+            height: 0;
+            padding-top: 50%;
+            padding-right: 100%;
+            background-color: red;
+            position: relative;
+            
+        }
+        .box > span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            border: solid 1px #000;
+        }
+        footer{
+            background-color: var(--key-color);
+            color:  var(--key-font-color);
+        }
+        footer > div{
+            width: var(--width-size);
+            margin: 0 auto;
+        }
+	</style>
+</head>
+    <body>
+    <header>
+        <nav>
+            <h1>test</h1>
+        </nav>
+    </header>
+    <div id="contents">
+        <p>ボックスのサイズはw:h=2:1で固定して、画像をトリミングしています。横長な画像でも縦長な画像でも一定の比率でトリミングされます。上が元の画像で下が固定比率でトリミングしたものです。</p>
+        <article>
+            <h2>Sample1</h2>
+            <img alt="sample1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Panorama_puy_de_dome_sud.jpg/1200px-Panorama_puy_de_dome_sud.jpg">
+            <div class="box">
+                <span style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Panorama_puy_de_dome_sud.jpg/1200px-Panorama_puy_de_dome_sud.jpg);"></span>
+            </div>
+        </article>
+        <article>
+            <h2>sample2</h2>
+            <img alt="sample2" src="https://i.pinimg.com/736x/3b/75/29/3b752966bdebc5d4a099c82721c43ab1--field-of-dreams-nature-landscape.jpg">
+            <div class="box">
+                <span style="background-image: url(https://i.pinimg.com/736x/3b/75/29/3b752966bdebc5d4a099c82721c43ab1--field-of-dreams-nature-landscape.jpg);"></span>
+            </div>
+        </article>
+    </div>
+    <footer>
+        <div>
+            <p id="copyright">コピーライト</p>
+        </div>
+    </footer>
+    </body>
+</html>
